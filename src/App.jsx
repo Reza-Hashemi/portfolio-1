@@ -1,19 +1,25 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Skills from "./pages/Projects";
+import Auth from "./pages/Auth";
 
 const App = () => {
   return (
     <Router>
-      <div className="h-screen w-screen relative">
+      <div className="h-screen w-screen bg-slate-800 relative">
         <Navbar />
-        <Home />
-        <About />
-        <hr className="border-t-2 border-slate-600"/>
-        <Skills />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/auth"
+            element={<Auth />}
+          />
+        </Routes>
       </div>
     </Router>
   );

@@ -1,7 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+} from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const handleLoginClick = () => {
+    navigate("/auth");
+  };
   return (
     <nav className="justify-between">
       <div className="font-bold w-10 h-10 ml-3 text-white fixed mt-2">
@@ -12,6 +19,11 @@ const Navbar = () => {
         <Link to="/about">About</Link>
         <Link to="/Skills">Skills</Link>
         <Link to="/Projects">Projects</Link>
+        <div className="bg-yellow-900 px-2 rounded-lg">
+          <button onClick={handleLoginClick}>
+            Login
+          </button>
+        </div>
       </div>
     </nav>
   );

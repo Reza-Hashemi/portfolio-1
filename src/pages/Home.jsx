@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import About from "../components/About";
+import Skills from "../components/Projects";
 
 const Home = () => {
   useEffect(() => {
@@ -28,6 +30,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <About />
+      <hr className="border-t-2 border-slate-600" />
+      <Skills />
     </div>
   );
 };
